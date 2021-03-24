@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div id="root">
+
+        </div>
+        
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+        
+
+        <script type="text/babel">
+            const rootHandle = document.getElementById('root')
+
+          
+            const prices = [150,250,200,400]
+
+                function Total(props){
+                    let result = 0
+                for(let num of props.a){
+                        result= result+num
+                        }
+                    return (
+                            <div>
+                                <h1> Total Amount ={result}</h1>
+                            <ul>
+                                    {props.a.map((ele,i) => {
+                                    return <li key={i}> {ele} </li>
+                                 })}
+                             </ul>
+                            </div>
+                            )
+                                }
+
+                    const ele = <Total a={prices} />
+
+            ReactDOM.render(ele,rootHandle)
+        </script>
+    </body>
+</html>
